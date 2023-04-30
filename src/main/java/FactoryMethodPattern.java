@@ -4,7 +4,10 @@ import product.Product;
 
 public class FactoryMethodPattern {
     public static void main(String[] args) {
-        Product productA = new ConcreteProductAFactory().createOperation();
-        Product productB = new ConcreteProductBFactory().createOperation();
+
+        ConcreteProductAFactory concreteProductAFactory = ConcreteProductAFactory.getInstance();
+        Product productA = concreteProductAFactory.createOperation();
+        ConcreteProductBFactory concreteProductBFactory = ConcreteProductBFactory.getInstance();
+        Product productB = concreteProductBFactory.createOperation();
     }
 }
